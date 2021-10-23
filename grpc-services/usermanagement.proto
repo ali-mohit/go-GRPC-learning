@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+package usermanagement;
+
+option go_package="github.com/ali-mohit/go-GRPC-learning/grpc-services/usermanagement";
+
+message CreateNewUserRequest{
+  string name = 1;
+  int32 age = 2;
+}
+
+message CreateNewUserResponse{
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+}
+
+service UserManagement{
+  rpc CreateNewUser (CreateNewUserRequest) returns (CreateNewUserResponse){}
+}
+
